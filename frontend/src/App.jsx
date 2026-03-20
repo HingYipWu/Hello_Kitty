@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './App.css';
 
 function App() {
   const [stateOn, setStateOn] = useState(false);
@@ -37,13 +38,15 @@ function App() {
   }
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', padding: 24 }}>
-      <h1>React toggle frontend</h1>
-      <p>Backend state_on is: <strong>{String(stateOn)}</strong></p>
-      <button onClick={toggle} disabled={loading}>
-        {loading ? 'Loading...' : 'Toggle backend state_on'}
-      </button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="App">
+      <div className="AppContainer">
+        <h1>React toggle frontend</h1>
+        <p className="status">Backend state_on is: <strong>{String(stateOn)}</strong></p>
+        <button onClick={toggle} disabled={loading}>
+          {loading ? 'Loading...' : 'Toggle backend state_on'}
+        </button>
+        {error && <p className="error">{error}</p>}
+      </div>
     </div>
   );
 }
