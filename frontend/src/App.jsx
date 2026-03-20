@@ -42,9 +42,10 @@ function App() {
       <div className="AppContainer">
         <h1>React toggle frontend</h1>
         <p className="status">Backend state_on is: <strong>{String(stateOn)}</strong></p>
-        <button onClick={toggle} disabled={loading}>
-          {loading ? 'Loading...' : 'Toggle backend state_on'}
+        <button onClick={toggle}>
+          {loading ? 'Loading…' : 'Toggle backend state_on'}
         </button>
+        <p>Button is always visible. Click toggles backend value.</p>
         {error && <p className="error">{error}</p>}
       </div>
     </div>
